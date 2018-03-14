@@ -184,7 +184,7 @@ public abstract class BaseTest {
                 writer.println(wd.getSessionId().toString());
                 logger.debug("uploading logs to server..");
                 logger.debug("Log Upload Path: "+System.getenv("screenshot_dir")+"/sessionid.txt");
-                FileUploader.uploadFile(System.getenv("screenshot_dir")+"/sessionid.txt", getAppiumServerAddress(), getApiKey());
+           //     FileUploader.uploadFile(System.getenv("screenshot_dir")+"/sessionid.txt", getAppiumServerAddress(), getApiKey());
                 writer.close();
             } catch (IOException e) {
                logger.error("IOError: could not store sessionId for result exporting");

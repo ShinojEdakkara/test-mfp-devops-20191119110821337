@@ -6,7 +6,8 @@ then
     rm $file
 fi 
 
-mvn clean test -DexportResults=true ${@} 
+mvn clean install -X -Dtest=$test -DexecutionType=$executionType -DapiKey=$bitbarApiKey -DapplicationPath=$applicationPath -Dtestdroid_project=$testdroid_project
+#mvn clean test -DexportResults=true ${@} 
 
 sessionid=$(head -n 1 target/sessionid.txt)
 echo "Uploading results file for "$sessionid
