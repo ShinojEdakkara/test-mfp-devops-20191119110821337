@@ -182,6 +182,9 @@ public abstract class BaseTest {
             try{
                 PrintWriter writer = new PrintWriter("target/sessionid.txt", "UTF-8");
                 writer.println(wd.getSessionId().toString());
+                logger.debug("uploading logs to server..");
+                logger.debug("Log Upload Path: "+System.getenv("screenshot_dir")+"/sessionid.txt");
+                FileUploader.uploadFile(System.getenv("screenshot_dir")+"/sessionid.txt", getAppiumServerAddress(), getApiKey());
                 writer.close();
             } catch (IOException e) {
                logger.error("IOError: could not store sessionId for result exporting");
