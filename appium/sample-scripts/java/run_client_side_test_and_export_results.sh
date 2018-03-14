@@ -6,7 +6,7 @@ then
     rm $file
 fi 
 
-mvn clean install -X -Dtest=$test -DexecutionType=$executionType -DapiKey=$bitbarApiKey -DapplicationPath=$applicationPath -Dtestdroid_project=$testdroid_project
+mvn clean install -X -Dtest=$test -DexecutionType=$executionType -DapiKey=$bitbarApiKey -DapplicationPath=$applicationPath -Dtestdroid_project=$testdroid_project -DexportResults=true
 #mvn clean test -DexportResults=true ${@} 
 
 sessionid=$(head -n 1 target/sessionid.txt)
