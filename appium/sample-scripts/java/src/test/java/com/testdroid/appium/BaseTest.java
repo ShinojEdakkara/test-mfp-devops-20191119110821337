@@ -47,7 +47,7 @@ public abstract class BaseTest {
             }*/
             if (exportTestResultsToCloud()) {
                 logger.debug("Exporting results enabled");
-                capabilities.setCapability("testdroid_junitWaitTime", 300);
+                capabilities.setCapability("testdroid_junitWaitTime", 60);
             }
             capabilities.setCapability("testdroid_app", getTargetAppPath());
             capabilities.setCapability("testdroid_apiKey", getApiKey());
