@@ -60,57 +60,18 @@ public class AndroidAppiumExampleTest  extends BaseAndroidTest {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
             }
-        
-        WebElement crashMeButton = wd.findElement(By.id("crashmebutton"));
-      //  if(crashMeButton.getText().equalsIgnoreCase("Crash Me")){
-        AssertJUnit.assertEquals("Crash Me", crashMeButton.getText());
-      //  }else{
-      //  	 AssertJUnit.assertEquals("Crash Me", crashMeButton.getText());
-      //  }
-        
-        
-        //*********Enter the login details and login*********//
-      /*  WebElement userField = wd.findElement(By.id("appcenter_Login_login"));
-        userField.click();
-        userField.sendKeys(serverutil.getUsername());
+    
+        takeScreenshot("start");
+        /*wd.findElement(By.xpath("//android.widget.RadioButton[@text='Use Testdroid Cloud']")).click();
+        wd.findElement(By.xpath("//android.widget.EditText[@resource-id='com.bitbar.testdroid:id/editText1']")).sendKeys("John Doe");
+        takeScreenshot("after_adding_name");
+        wd.navigate().back();
+        wd.findElement(By.xpath("//android.widget.ScrollView[1]/android.widget.LinearLayout[1]/android.widget.LinearLayout[2]/android.widget.Button[1]")).click();
+        takeScreenshot("after_answer");*/
 
-        WebElement passwordField = wd.findElement(By.id("appcenter_Login_pw"));
-        passwordField.click();
-        passwordField.sendKeys(serverutil.getPassword());
-
-        WebElement hostField = wd.findElement(By.id("appcenter_Login_server"));
-        hostField.click();
-        hostField.sendKeys(serverutil.getHost());
-
-        WebElement portField = wd.findElement(By.id("appcenter_Login_port"));
-        portField.click();
-        portField.sendKeys(""+ serverutil.getPort() + "");
-
-        WebElement contextField = wd.findElement(By.id("appcenter_Login_ctx"));
-        contextField.click();
-        contextField.sendKeys(serverutil.getMobContext());
-
-        //takeScreenshot("Login details entered");
-        ((AndroidDriver)wd).pressKeyCode(AndroidKeyCode.ENTER);*/
-
-        try {
-            
-            Thread.sleep(10000);
-        } catch (InterruptedException e) {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
-        }
-
-	/* Check this later
-        WebElement catalogElement = wait.until(
-                ExpectedConditions.presenceOfElementLocated(By.xpath("//android.view.View[@content-desc='Catalog']")));
-
-        //takeScreenshot("Catalog Screen");
-        if (catalogElement.isDisplayed()) {
-            AssertJUnit.assertEquals(1, 1);
-        } else {
-            AssertJUnit.assertEquals(1, 0);//fail the case
-        }
-	*/
+        wd.findElement(By.xpath("//android.widget.EditText[@resource-id='com.sample.resourcerequestandroid:id/resource']")).sendKeys("Endpoint");
+        takeScreenshot("after_entering_resource_endpoint");
+        wd.findElement(By.xpath("//android.widget.LinearLayout[1]/android.widget.Button[1]")).click();
+        takeScreenshot("after_clicking_button");    
     }
 }
