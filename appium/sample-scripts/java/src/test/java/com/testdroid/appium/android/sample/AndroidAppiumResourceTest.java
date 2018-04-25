@@ -41,7 +41,7 @@ public class AndroidAppiumResourceTest extends BaseAndroidTest {
     public void setUp() throws Exception {
         setUpTest();
      //   serverutil = ServerUtil.getInstance();
-        wait = new WebDriverWait(wd, 30);
+        wait = new WebDriverWait(wd, 120);
     }
     @AfterClass
     public void tearDown()
