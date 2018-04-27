@@ -69,7 +69,7 @@ public class AndroidAppiumExampleTest  extends BaseAndroidTest {
         wd.findElement(By.xpath("//android.widget.ScrollView[1]/android.widget.LinearLayout[1]/android.widget.LinearLayout[2]/android.widget.Button[1]")).click();
         takeScreenshot("after_answer");*/
         
-        wd.findElement(By.xpath("//android.widget.EditText[@resource-id='com.ibm.mysampleapp:id/resource']")).sendKeys("protected");
+        wd.findElement(By.xpath("//android.widget.EditText[@resource-id='com.sample.resourcerequestandroid:id/resource']")).sendKeys("protected");
         takeScreenshot("after_entering_resource_endpoint");
         wd.findElement(By.xpath("//android.widget.LinearLayout[1]/android.widget.Button[1]")).click();
         takeScreenshot("after_clicking_button");
